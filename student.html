@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            text-align: center;
+            color: black;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+            font-size: 16px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 6px 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Student Details</h2>
+
+    <table id="student-details-table" >
+        <tr>
+            <th>Student id</th>
+            <th>Course id</th>
+            <th>Marks</th>
+        </tr>
+        {% for row in student_data %}
+        <tr>
+            <td>{{ row['Student id'] }}</td>
+            <td>{{ row['Course id'] }}</td>
+            <td>{{ row['Marks'] }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="2"><strong>Total Marks</strong></td>
+            <td><strong>{{ total }}</strong></td>
+        </tr>
+    </table>
+
+    <a href="/" class="button-link">Go Back</a>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Course Details</h2>
+    <table border="2" id="course-details-table">
+        <tr><th>Average Marks</th><th>Maximum Marks</th></tr>
+        <tr><td>{{ avg }}</td><td>{{ max_marks }}</td></tr>
+    </table>
+    <br>
+    <img src="{{ url_for('static', filename='histogram.png') }}" alt="Histogram" />
+    <br>
+    <a href="/" class="button-link">Go Back</a>
+</body>
+</html>
